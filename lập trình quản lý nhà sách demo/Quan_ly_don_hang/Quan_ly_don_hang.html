@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Đơn Hàng</title>
+  <link rel="stylesheet" href="Quan_ly_don_hang.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>Quản Lý Đơn Hàng</h1>
+  </header>
+  <main class="container">
+    <!-- Khu vực các nút điều khiển -->
+    <div class="control-buttons">
+      <button class="add-btn" onclick="taoDonHang()">Tạo Đơn Hàng</button>
+      <button class="delete-all-btn" onclick="xoaHetMa()">Xóa Hết Mã</button>
+      <button class="back-btn" onclick="quayLai()">Quay Lại</button>
+      <!-- Liên kết ẩn chuyển sang quản lý doanh thu (nếu cần) -->
+      <a id="hidden-revenue-link" href="../Bao_cao_doanh_thu/Bao_cao_doanh_thu.html" style="display: none;">Xem Doanh
+        Thu</a>
+    </div>
+
+    <h2 class="table-title">Danh Sách Đơn Hàng</h2>
+    <table id="order-table">
+      <thead>
+        <tr>
+          <th>Mã</th>
+          <th>Ngày</th>
+          <th>Khách Hàng</th>
+          <th>Sách</th>
+          <th>SL</th>
+          <th>Giá Bán
+            <span class="toggle-columns" onclick="toggleColumns()">&#x25BC;</span>
+          </th>
+          <th class="toggleable">Lãi suất (%)</th>
+          <th class="toggleable">Lợi Nhuận</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="order-list">
+        <!-- Dữ liệu đơn hàng sẽ hiển thị ở đây -->
+      </tbody>
+    </table>
+
+    <!-- Panel chọn sách (có sẵn) -->
+    <div id="book-panel" class="book-panel">
+      <h3>Chọn sách từ Quản Lý Sách</h3>
+      <table id="book-select-table">
+        <thead>
+          <tr>
+            <th>Tên Sách</th>
+            <th>Giá (VNĐ)</th>
+            <th>Số Lượng Còn</th>
+            <th>Hành Động</th>
+          </tr>
+        </thead>
+        <tbody id="book-select-list">
+          <!-- Danh sách sách để lựa chọn -->
+        </tbody>
+      </table>
+      <button onclick="closeBookPanel()">Đóng</button>
+    </div>
+
+    <!-- Panel thông tin khách hàng -->
+    <div id="customer-panel" class="customer-panel">
+      <h3>Thông Tin Khách Hàng</h3>
+      <label>Tên khách hàng:</label>
+      <input type="text" id="customer-name" />
+
+      <label>Email:</label>
+      <input type="email" id="customer-email" />
+
+      <label>Số điện thoại:</label>
+      <input type="text" id="customer-phone" />
+
+      <label>Địa chỉ:</label>
+      <input type="text" id="customer-address" />
+
+      <div class="control-buttons">
+        <button onclick="saveCustomerInfo()">Lưu</button>
+        <button onclick="exportToCustomerPage()">Tải sang Quản Lý Khách Hàng</button>
+        <button onclick="closeCustomerPanel()">Đóng</button>
+      </div>
+    </div>
+
+  </main>
+  <script src="Quan_ly_don_hang.js"></script>
+</body>
+
+</html>

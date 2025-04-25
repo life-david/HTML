@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Nhân Viên</title>
+    <link rel="stylesheet" href="Quan_ly_nhan_vien.css">
+</head>
+
+<body>
+    <div class="overlay"></div> <!-- Lớp overlay để làm nền lung linh -->
+    <header>
+        <h1>Quản Lý Nhân Viên</h1>
+    </header>
+    <main class="container">
+        <!-- Khu vực các nút điều khiển -->
+        <div class="control-buttons">
+            <input type="text" id="search" placeholder="Tìm nhân viên...">
+            <select id="search-type">
+                <option value="name">Tên nhân viên</option>
+                <option value="phone">Số điện thoại</option>
+                <option value="email">Email</option>
+                <option value="address">Địa chỉ</option>
+            </select>
+            <button class="search-btn" onclick="timNhanVien()">Tìm</button>
+            <button class="back-btn" onclick="quayLai()">Quay Lại</button>
+        </div>
+
+        <!-- Panel thông tin nhân viên -->
+        <div id="employee-panel" class="employee-panel">
+            <h3>Thông Tin Nhân Viên</h3>
+            <label>Tên nhân viên:</label>
+            <input type="text" id="employee-name" />
+
+            <label>Email:</label>
+            <input type="email" id="employee-email" />
+
+            <label>Số điện thoại:</label>
+            <input type="text" id="employee-phone" />
+
+            <label>Địa chỉ:</label>
+            <input type="text" id="employee-address" />
+
+            <div class="control-buttons">
+                <button onclick="saveEmployeeInfo()">Lưu</button>
+            </div>
+        </div>
+
+        <h2 class="table-title">Danh Sách Nhân Viên</h2>
+        <table id="employee-table">
+            <thead>
+                <tr>
+                    <th>Tên Nhân Viên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Email</th>
+                    <th>Địa Chỉ</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="employee-list">
+                <!-- Dữ liệu nhân viên sẽ hiển thị ở đây -->
+            </tbody>
+        </table>
+    </main>
+    <script src="Quan_ly_nhan_vien.js"></script>
+</body>
+
+</html>

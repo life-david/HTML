@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khách Hàng</title>
+    <link rel="stylesheet" href="Quan_ly_khach_hang.css">
+</head>
+
+<body>
+    <header>
+        <h1>Quản Lý Khách Hàng</h1>
+    </header>
+    <main class="container">
+        <!-- Khu vực các nút điều khiển -->
+        <div class="control-buttons">
+            <button class="back-btn" onclick="quayLai()">Quay Lại</button>
+        </div>
+        <div class="customer-form">
+            <input type="text" id="customer-name" placeholder="Tên khách hàng" />
+            <input type="text" id="customer-phone" placeholder="Số điện thoại" />
+            <input type="email" id="customer-email" placeholder="Email" />
+            <input type="text" id="customer-address" placeholder="Địa chỉ" />
+            <button class="add-btn" onclick="themKhachHang()">Nhập</button>
+        </div>
+        <h2 class="table-title">Danh Sách Khách Hàng</h2>
+        <table id="customer-table">
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Số Điện Thoại</th>
+                    <th>Email</th>
+                    <th>Địa Chỉ</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="customer-list">
+                <!-- Dữ liệu khách hàng sẽ hiển thị ở đây -->
+            </tbody>
+        </table>
+    </main>
+    <script src="Quan_ly_khach_hang.js"></script>
+</body>
+
+</html>

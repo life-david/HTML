@@ -1,0 +1,128 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif; /* Thêm font chữ mặc định */
+    /* Có thể thêm font chữ tùy chỉnh ở đây nếu muốn */
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.chart-container {
+    position: relative;
+    /* height: 150px; Chiều cao giờ được quản lý bởi flex-grow-1 trong card-body */
+    width: 100%;
+}
+
+/* Giữ lại style cho giá trị nhiệt độ nếu muốn tùy chỉnh thêm */
+.temperature-value {
+    font-weight: 500;
+    color: #dc3545; /* Màu đỏ của Bootstrap cho nhiệt độ cao */
+}
+.temperature-value span:last-child { /* Style cho đơn vị °C */
+     font-size: 0.6em;
+     vertical-align: super; /* Hơi nâng đơn vị lên */
+     opacity: 0.8;
+}
+
+/* Tùy chỉnh màu sắc hoặc các thành phần khác của Bootstrap nếu cần */
+/* Ví dụ: thay đổi màu nền mặc định */
+/* body.bg-light { background-color: #f8f9fa !important; } */
+
+/* Thêm hiệu ứng hover nhẹ cho card */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Tăng shadow nhẹ khi hover */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Đảm bảo text trên progress bar luôn thấy được */
+.progress-bar span {
+     color: rgba(0, 0, 0, 0.7); /* Màu chữ hơi tối để dễ đọc trên nền sáng */
+     font-weight: 500;
+}
+/* Đổi màu chữ nếu nền quá tối */
+.progress-bar.bg-danger span, .progress-bar.bg-primary span, .progress-bar.bg-success span {
+     color: rgba(255, 255, 255, 0.9);
+}
+
+/* Giới hạn chiều cao của bảng Running Applications */
+.table-container {
+    max-height: 300px; /* Chiều cao tối đa của bảng */
+    overflow-y: auto; /* Thêm thanh cuộn dọc */
+    border: 1px solid #ddd; /* Thêm viền để phân biệt */
+    padding: 5px; /* Khoảng cách bên trong */
+    background-color: #f9f9f9; /* Màu nền nhạt */
+}
+
+/* Giới hạn chiều cao của bảng Top Processes */
+.table-container {
+    max-height: 300px; /* Chiều cao tối đa của bảng */
+    overflow-y: auto; /* Thêm thanh cuộn dọc */
+    border: 1px solid #ddd; /* Thêm viền để phân biệt */
+    padding: 5px; /* Khoảng cách bên trong */
+    background-color: #f9f9f9; /* Màu nền nhạt */
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    border-right: 1px solid #ddd;
+    background-color: #f8f9fa;
+}
+
+.sidebar .nav-link {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.details-section {
+    margin-top: 20px;
+}
+
+.details-section canvas {
+    width: 100%;
+    height: 400px;
+}
+
+.modal-sm {
+    max-width: 500px; /* Giới hạn chiều rộng modal */
+}
+
+#chartCanvas {
+    max-height: 300px; /* Giới hạn chiều cao biểu đồ */
+}
+
+.modal-title {
+    font-size: 1.2rem; /* Giảm kích thước tiêu đề modal */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .sidebar {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .btn-outline-dark {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.dark-mode .btn-outline-dark:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.dark-mode canvas {
+    background-color: #1e1e1e;
+}

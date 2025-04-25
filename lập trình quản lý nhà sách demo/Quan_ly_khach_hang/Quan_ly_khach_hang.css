@@ -1,0 +1,236 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Lớp overlay để tạo hiệu ứng nền lung linh */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.2), rgba(0, 240, 255, 0.1));
+    z-index: 0;
+}
+
+/* Header hiện đại */
+header {
+    background: linear-gradient(90deg, #265c92, #1e4a78);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Container chính */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nút điều khiển */
+.control-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.control-buttons input,
+.control-buttons select,
+.control-buttons button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.control-buttons input:hover,
+.control-buttons select:hover,
+.control-buttons button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.6);
+    color: white;
+}
+
+.control-buttons input::before,
+.control-buttons select::before,
+.control-buttons button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.5), transparent);
+    transition: 0.5s;
+}
+
+.control-buttons input:hover::before,
+.control-buttons select:hover::before,
+.control-buttons button:hover::before {
+    left: 100%;
+}
+
+.search-btn {
+    background: linear-gradient(45deg, #17a2b8, #00e6ff);
+    color: rgb(0, 0, 0);
+}
+
+.search-btn:hover {
+    background: linear-gradient(45deg, #138496, #00c9e6);
+}
+
+.add-btn {
+    background: linear-gradient(45deg, #28a745, #85e085);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.add-btn:hover {
+    background: linear-gradient(45deg, #218838, #66cc66);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
+}
+
+.back-btn {
+    background: linear-gradient(45deg, #6c757d, #adb5bd);
+    color: rgb(0, 0, 0);
+}
+
+.back-btn:hover {
+    background: linear-gradient(45deg, #5a6268, #8e979f);
+}
+
+/* Tiêu đề bảng */
+.table-title {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    margin: 20px 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Bảng hiện đại */
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+
+th::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+}
+
+th:hover::before {
+    left: 100%;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.8);
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+td:hover {
+    background: rgba(0, 240, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Ô nhập liệu trong bảng */
+table input[type="text"],
+table input[type="email"] {
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    color: #2c3e50;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+table input[type="text"]:focus,
+table input[type="email"]:focus {
+    outline: none;
+    background: rgba(0, 240, 255, 0.1);
+}
+
+/* Nút xóa */
+.delete-btn {
+    background: linear-gradient(45deg, #dc3545, #ff6b6b);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: linear-gradient(45deg, #c82333, #e04f5f);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.5);
+}
+
+/* Highlight */
+.highlight {
+    color: red;
+    font-weight: bold;
+    background: yellow;
+    padding: 2px 5px;
+    border-radius: 3px;
+}

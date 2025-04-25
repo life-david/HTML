@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Sách</title>
+  <link rel="stylesheet" href="Quan_ly_sach.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <header>
+    <h1>Quản Lý Sách</h1>
+  </header>
+  <main class="container">
+    <!-- Các nút điều khiển -->
+    <div class="control-buttons">
+      <input type="text" id="search" placeholder="Tìm sách...">
+      <select id="search-type">
+        <option value="name">Tên sách</option>
+        <option value="author">Tác giả</option>
+        <option value="publisher">NXB</option>
+        <option value="category">Thể loại</option>
+      </select>
+      <button class="search-btn" onclick="timSach()">Tìm</button>
+      <button class="add-btn" onclick="themSach()">Thêm Sách</button>
+      <button class="back-btn" onclick="quayLai()">Quay Lại</button>
+    </div>
+
+    <h2 class="table-title">Danh Sách Sách</h2>
+    <table id="book-table">
+      <thead>
+        <tr>
+          <th>Tên Sách</th>
+          <th>Tác Giả</th>
+          <th>NXB</th>
+          <th>Thể Loại</th>
+          <th>Số Lượng</th>
+          <th>Giá Nhập(VNĐ)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list">
+        <!-- Dữ liệu sách sẽ hiển thị ở đây -->
+      </tbody>
+    </table>
+  </main>
+  <script src="Quan_ly_sach.js"></script>
+</body>
+
+</html>
