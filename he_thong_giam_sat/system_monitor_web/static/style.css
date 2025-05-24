@@ -1,7 +1,8 @@
 /* style.css */
 
 body {
-    font-family: Arial, sans-serif; /* Thêm font chữ mặc định */
+    font-family: Arial, sans-serif;
+    /* Thêm font chữ mặc định */
     /* Có thể thêm font chữ tùy chỉnh ở đây nếu muốn */
     background-color: #ffffff;
     color: #000000;
@@ -16,12 +17,14 @@ body {
 /* Giữ lại style cho giá trị nhiệt độ nếu muốn tùy chỉnh thêm */
 .temperature-value {
     font-weight: 500;
-    color: #dc3545; /* Màu đỏ của Bootstrap cho nhiệt độ cao */
+    color: #dc3545;
+    /* Màu đỏ cho nhiệt độ cao */
 }
-.temperature-value span:last-child { /* Style cho đơn vị °C */
-     font-size: 0.6em;
-     vertical-align: super; /* Hơi nâng đơn vị lên */
-     opacity: 0.8;
+
+.temperature-value span:last-child {
+    font-size: 0.6em;
+    vertical-align: super;
+    opacity: 0.8;
 }
 
 /* Tùy chỉnh màu sắc hoặc các thành phần khác của Bootstrap nếu cần */
@@ -31,36 +34,51 @@ body {
 /* Thêm hiệu ứng hover nhẹ cho card */
 .card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important; /* Tăng shadow nhẹ khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    /* Tăng shadow nhẹ khi hover */
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 /* Đảm bảo text trên progress bar luôn thấy được */
 .progress-bar span {
-     color: rgba(0, 0, 0, 0.7); /* Màu chữ hơi tối để dễ đọc trên nền sáng */
-     font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+    /* Màu chữ hơi tối để dễ đọc trên nền sáng */
+    font-weight: 500;
 }
+
 /* Đổi màu chữ nếu nền quá tối */
-.progress-bar.bg-danger span, .progress-bar.bg-primary span, .progress-bar.bg-success span {
-     color: rgba(255, 255, 255, 0.9);
+.progress-bar.bg-danger span,
+.progress-bar.bg-primary span,
+.progress-bar.bg-success span {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Giới hạn chiều cao của bảng Running Applications */
 .table-container {
-    max-height: 300px; /* Chiều cao tối đa của bảng */
-    overflow-y: auto; /* Thêm thanh cuộn dọc */
-    border: 1px solid #ddd; /* Thêm viền để phân biệt */
-    padding: 5px; /* Khoảng cách bên trong */
-    background-color: #f9f9f9; /* Màu nền nhạt */
+    max-height: 300px;
+    /* Chiều cao tối đa của bảng */
+    overflow-y: auto;
+    /* Thêm thanh cuộn dọc */
+    border: 1px solid #ddd;
+    /* Thêm viền để phân biệt */
+    padding: 5px;
+    /* Khoảng cách bên trong */
+    background-color: #f9f9f9;
+    /* Màu nền nhạt */
 }
 
 /* Giới hạn chiều cao của bảng Top Processes */
 .table-container {
-    max-height: 300px; /* Chiều cao tối đa của bảng */
-    overflow-y: auto; /* Thêm thanh cuộn dọc */
-    border: 1px solid #ddd; /* Thêm viền để phân biệt */
-    padding: 5px; /* Khoảng cách bên trong */
-    background-color: #f9f9f9; /* Màu nền nhạt */
+    max-height: 300px;
+    /* Chiều cao tối đa của bảng */
+    overflow-y: auto;
+    /* Thêm thanh cuộn dọc */
+    border: 1px solid #ddd;
+    /* Thêm viền để phân biệt */
+    padding: 5px;
+    /* Khoảng cách bên trong */
+    background-color: #f9f9f9;
+    /* Màu nền nhạt */
 }
 
 .sidebar {
@@ -93,15 +111,18 @@ body {
 }
 
 .modal-sm {
-    max-width: 500px; /* Giới hạn chiều rộng modal */
+    max-width: 500px;
+    /* Giới hạn chiều rộng modal */
 }
 
 #chartCanvas {
-    max-height: 300px; /* Giới hạn chiều cao biểu đồ */
+    max-height: 300px;
+    /* Giới hạn chiều cao biểu đồ */
 }
 
 .modal-title {
-    font-size: 1.2rem; /* Giảm kích thước tiêu đề modal */
+    font-size: 1.2rem;
+    /* Giảm kích thước tiêu đề modal */
 }
 
 body.dark-mode {

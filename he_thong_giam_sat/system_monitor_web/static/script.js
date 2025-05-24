@@ -141,6 +141,11 @@ function updateUI(stats) {
     updateProgressBar('mem-progress', 'mem-usage-bar-text', stats.memory.percent);
     updateChartData(ramChart, stats.memory.percent);
     updateProgressBar('disk-progress', 'disk-usage-bar-text', stats.disk.percent);
+    document.getElementById('mem-used').textContent = stats.memory.used_gb || '--';
+    document.getElementById('mem-total').textContent = stats.memory.total_gb || '--';
+    document.getElementById('disk-used').textContent = stats.disk.used_gb || '--';
+    document.getElementById('disk-total').textContent = stats.disk.total_gb || '--';
+    document.getElementById('cpu-temp').textContent = stats.temperature.cpu_temp || '--';
 }
 
 // --- Hàm cập nhật bảng tiến trình ---
@@ -234,17 +239,11 @@ function fetchRunningApps() {
 async function fetchStats() {
     try {
         const response = await fetch('/api/stats');
-        if (!response.ok) {
-            // Ném lỗi nếu response không thành công (status code không phải 2xx)
-            throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
-        }
         const stats = await response.json();
-        updateUI(stats); // Cập nhật UI với dữ liệu mới
-        updateProcessTable(stats.processes); // Cập nhật bảng tiến trình
+        console.log('Stats:', stats); // Log để kiểm tra
+        updateUI(stats);
     } catch (error) {
         console.error("Failed to fetch system stats:", error);
-        // Có thể hiển thị thông báo lỗi trên UI cho người dùng tại đây
-        // Ví dụ: set một số giá trị thành 'Error' hoặc đổi màu nền
     }
 }
 

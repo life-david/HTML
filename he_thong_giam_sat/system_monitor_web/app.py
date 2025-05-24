@@ -46,9 +46,7 @@ def get_system_stats():
     mem_used_gb = round(mem.used / (1024**3), 1)
 
     # Disk Usage (Ổ đĩa gốc)
-    disk_path = '/'
-    if platform.system() == "Windows":
-        disk_path = 'C:\\' 
+    disk_path = 'C:\\' if platform.system() == "Windows" else '/'
     try:
         disk = psutil.disk_usage(disk_path)
         disk_percent = disk.percent
@@ -66,8 +64,9 @@ def get_system_stats():
     cpu_temp_value = 'N/A' # Giá trị mặc định
     try:
         temps = psutil.sensors_temperatures()
+        print("Temperature sensors:", temps)  # Log để kiểm tra cảm biến
         if temps:
-            # Logic tìm nhiệt độ CPU có thể cần điều chỉnh tùy hệ thống
+            # Logic tìm nhiệt độ CPU
             found_cpu_temp = False
             # Ưu tiên các key phổ biến
             preferred_keys = ['coretemp', 'k10temp', 'cpu_thermal', 'cpu-thermal', 'acpitz']
@@ -95,8 +94,7 @@ def get_system_stats():
             #           cpu_temp_value = temps[first_sensor_key][0].current
             
     except Exception as e:
-        # Không cần in lỗi ra console trừ khi đang debug
-        # print(f"Could not get temperature: {e}")
+        print(f"Error fetching temperature: {e}")
         cpu_temp_value = 'N/A' 
     
     # Làm tròn nếu là số
@@ -172,10 +170,10 @@ def index():
 
 @app.route('/api/stats')
 def api_stats():
-    """API trả về dữ liệu thống kê hệ thống dạng JSON."""
     stats = get_system_stats()
     temp_and_fan = get_temperature_and_fan_speed()
-    stats.update(temp_and_fan)  # Thêm nhiệt độ và tốc độ quạt vào dữ liệu trả về
+    stats.update(temp_and_fan)
+    print("API /api/stats response:", stats)  # Log để kiểm tra
     return jsonify(stats)
 
 @app.route('/api/running_apps')
